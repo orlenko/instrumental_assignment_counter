@@ -5,7 +5,26 @@
 
 `Counter` allows the user to count event occurrences, and query their number over a time window.
 
-The max age of events, the timestamp function, and the cleanup threshold can be parametrized (see `__init__`).
+The max age of events, the timestamp function, and the cleanup threshold can be parametrized (see [Constructor](#constructor)).
+
+### Example usage:
+```python
+my_counter = Counter()
+
+# An event has occurred - register it!
+my_counter.on_event()
+
+# ... some time later
+
+# Another event! 
+my_counter.on_event()
+
+# ... some time later
+# How many events happened in the last three and a half seconds?
+events_count = my_counter.get_count(3.5)
+print('During the last 3.5 sec, we have accumulated %s events' % events_count )
+
+```
 
 
 ### Constructor
