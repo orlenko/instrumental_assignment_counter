@@ -91,7 +91,7 @@ Note that the old events may have been pruned earlier, and then the count will n
 
 test_event_count = 1_000_000
 for i in range(5):
-    for threshold in (0, 1, 2, 100, 1000, 100_000, 2_000_0000):
+    for threshold in (0, 1, 2, 100, 1000, 100_000, 20_000_000):
         c = Counter(max_seconds=1, cleaning_threshold=threshold)
         start = time()
         for i in range(test_event_count):
